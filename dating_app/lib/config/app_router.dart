@@ -1,12 +1,11 @@
+import 'package:dating_app/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class Approuter {
   static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      /*
       case '/':
         return HomeScreen.route();
-      */
       default:
         return _errorRoute();
     }

@@ -3,7 +3,8 @@ import "package:flutter/material.dart";
 ThemeData theme() {
   return ThemeData(
     primaryColor: Color(0xFF2B2E4A),
-    colorScheme: Color(0xFFE84545),
+    colorScheme:
+        ColorScheme.fromSwatch().copyWith(secondary: Color(0xFFE84545)),
     scaffoldBackgroundColor: Colors.white,
     backgroundColor: Color(0xFFF4F4F4),
     fontFamily: "Optima",

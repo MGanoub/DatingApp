@@ -1,4 +1,5 @@
 import 'package:dating_app/config/theme.dart';
+import 'package:dating_app/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,8 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'DatingApp',
       theme: theme(),
+      home: HomeScreen(),
     );
   }
 }

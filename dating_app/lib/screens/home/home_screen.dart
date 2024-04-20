@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(title: "DISCOVER"),
       body: BlocBuilder<SwipeBloc, SwipeState>(
         builder: (context, state) {
           if (state is SwipeLoading) {
@@ -29,23 +29,29 @@ class HomeScreen extends StatelessWidget {
           } else if (state is SwipeLoaded) {
             return Column(
               children: [
-                Draggable(
-                  feedback: UserCard(user: state.users[0]),
-                  child: UserCard(user: state.users[0]),
-                  childWhenDragging: state.users.length > 1
-                      ? UserCard(user: state.users[1])
-                      : Container(),
-                  onDragEnd: (drag) {
-                    if (drag.offset.dx < 0) {
-                      context.read<SwipeBloc>()
-                        ..add(SwipeLeftEvent(user: state.users[0]));
-                      print('Swiped Left');
-                    } else {
-                      context.read<SwipeBloc>()
-                        ..add(SwipeRightEvent(user: state.users[0]));
-                      print('Swiped Right');
-                    }
+                InkWell(
+                  onDoubleTap: () {
+                    Navigator.pushNamed(context, '/users',
+                        arguments: state.users[0]);
                   },
+                  child: Draggable(
+                    feedback: UserCard(user: state.users[0]),
+                    child: UserCard(user: state.users[0]),
+                    childWhenDragging: state.users.length > 1
+                        ? UserCard(user: state.users[1])
+                        : Container(),
+                    onDragEnd: (drag) {
+                      if (drag.offset.dx < 0) {
+                        context.read<SwipeBloc>()
+                          ..add(SwipeLeftEvent(user: state.users[0]));
+                        print('Swiped Left');
+                      } else {
+                        context.read<SwipeBloc>()
+                          ..add(SwipeRightEvent(user: state.users[0]));
+                        print('Swiped Right');
+                      }
+                    },
+                  ),
                 ),
                 Padding(
                   padding:

@@ -1,6 +1,7 @@
 import 'package:dating_app/blocs/bloc/swipe_bloc.dart';
+import 'package:dating_app/config/app_router.dart';
 import 'package:dating_app/config/theme.dart';
-import 'package:dating_app/screens/home/home_screen.dart';
+import 'package:dating_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'DatingApp',
         theme: theme(),
-        home: HomeScreen(),
+        onGenerateRoute: Approuter.onGenerateRoute,
+        initialRoute: OnboardingScreen.routeName,
       ),
     );
   }

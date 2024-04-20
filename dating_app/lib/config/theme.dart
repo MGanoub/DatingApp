@@ -7,7 +7,7 @@ ThemeData theme() {
         ColorScheme.fromSwatch().copyWith(secondary: Color(0xFFE84545)),
     scaffoldBackgroundColor: Colors.white,
     backgroundColor: Color(0xFFF4F4F4),
-    fontFamily: "Optima",
+    fontFamily: "Marcellus",
     textTheme: TextTheme(
       headline1: TextStyle(
         color: Color(0xFF2B2E4A),

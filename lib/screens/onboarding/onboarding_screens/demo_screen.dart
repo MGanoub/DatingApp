@@ -24,6 +24,7 @@ class Demo extends StatelessWidget {
               SizedBox(height: 100),
               CustomTextHeader(
                   tabController: tabController, text: "What\'s Your Age?"),
+              SizedBox(height: 10),
               CustomTextField(
                   tabController: tabController, text: "ENTER YOUR AGE"),
             ],

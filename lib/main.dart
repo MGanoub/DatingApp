@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         title: 'DatingApp',
         theme: theme(),
         onGenerateRoute: Approuter.onGenerateRoute,
-        initialRoute: OnboardingScreen.routeName,
+        initialRoute: MatchesScreen.routeName,
       ),
     );
   }
